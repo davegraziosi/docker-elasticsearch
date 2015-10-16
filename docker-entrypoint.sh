@@ -14,6 +14,12 @@ export HTTP_ENABLE=${HTTP_ENABLE:-true}
 export MULTICAST=${MULTICAST:-false}
 export CLOUD_ENABLE=${CLOUD_ENABLE:-false}
 
+# Enable S3 backups
+export S3_BUCKET=${S3_BUCKET:-}
+export S3_REGION=${S3_REGION:-}
+export S3_ACCESS_KEY=${S3_ACCESS_KEY:-}
+export S3_SECRET_KEY=${S3_SECRET_KEY:-}
+
 export NAMESPACE=${NAMESPACE:-default}
 export DISCOVERY_SERVICE=${DISCOVERY_SERVICE:-elasticsearch-discovery}
 

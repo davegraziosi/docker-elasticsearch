@@ -16,6 +16,17 @@ bootstrap.mlockall: true
 http.enabled: ${HTTP_ENABLE}
 cloud.enabled: ${CLOUD_ENABLE}
 
+index:
+  store:
+    type: niofs
+
+repositories:
+  s3:
+    bucket: ${S3_BUCKET}
+    region: ${S3_REGION}
+    access_key: ${S3_ACCESS_KEY}
+    secret_key: ${S3_SECRET_KEY}
+
 cloud:
   k8s:
     service: ${DISCOVERY_SERVICE}

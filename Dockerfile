@@ -26,6 +26,7 @@ ADD do_not_use.yml ${ES_INSTALL}/config/elasticsearch.yml
 
 # Install Elasticsearch plug-ins
 RUN ${ES_INSTALL}/bin/plugin -i io.fabric8/elasticsearch-cloud-kubernetes/1.3.0 --verbose
+RUN ${ES_INSTALL}/bin/plugin -i elasticsearch/elasticsearch-cloud-aws/2.7.1 --verbose
 
 # Add logging and real config
 ADD config/* ${ES_INSTALL}/config/
