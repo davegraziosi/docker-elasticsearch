@@ -1,7 +1,7 @@
 FROM quay.io/ukhomeofficedigital/openjdk8-jre:v0.1.0
 
-ENV ELASTICSEARCH_MAJOR 1.7
-ENV ELASTICSEARCH_VERSION 1.7.2
+ENV ELASTICSEARCH_MAJOR 2.x
+ENV ELASTICSEARCH_VERSION 2.0.0
 
 ADD ./install_from_repo.sh /tmp/
 
@@ -25,7 +25,7 @@ RUN set -ex \
 ADD do_not_use.yml ${ES_INSTALL}/config/elasticsearch.yml
 
 # Install Elasticsearch plug-ins
-RUN ${ES_INSTALL}/bin/plugin -i io.fabric8/elasticsearch-cloud-kubernetes/1.3.0 --verbose
+RUN ${ES_INSTALL}/bin/plugin install io.fabric8/elasticsearch-cloud-kubernetes/1.3.0 --verbose
 
 # Add logging and real config
 ADD config/* ${ES_INSTALL}/config/
