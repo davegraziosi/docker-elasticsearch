@@ -43,7 +43,7 @@ if docker ps -a | grep es_thing ; then
 fi
 
 docker build -t es .
-${SUDO_CMD}  docker run --name es_thing -d -p 9200:9200 -p 9300:9300  es
+${SUDO_CMD}  docker run -m 1000M --memory-swap 1000M --name es_thing -d -p 9200:9200 -p 9300:9300  es
 get http://${DOCKER_HOST_NAME}:9200/
 docker logs es_thing
 get http://${DOCKER_HOST_NAME}:9200/_cluster/health?pretty
